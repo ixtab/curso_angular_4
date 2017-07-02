@@ -12,14 +12,18 @@ body {
 }
 
 .fondoAzul {
+  color: blue !important;
   background-color: lightblue;
 }
 
 .fondoRojo {
+
+  color: red !important;
   background-color: pink;
 }
 
 .fondoAmarillo {
+  color: grey !important;
   background-color: lightyellow;
 }
 
