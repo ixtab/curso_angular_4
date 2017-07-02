@@ -1,7 +1,10 @@
-Hay comentarios en:
-  - app.component.ts
+## Hay comentarios en:
+
+  - src/app/app.component.ts
   - app.component.html
   - app.module.ts
+  - app.fruta.component.ts
+  ___
 
 # Elementos que conforman Angular
 
@@ -19,6 +22,41 @@ la lógica de la app donde se incluirá el modelo de datos, es decir una especie
 
 Tienen que ir registrados en **app.module.ts** que es el módulo principal
 
+Ejemplo de componente:
+``` js
+import { Component } from '@angular/core';
+import { Empleado } from './empleado';
+
+@Component({
+    selector: 'empleado-tag',
+    templateUrl: './empleado.component.html',
+    styleUrls: ['./empleado.component.css']
+    
+})
+
+export class EmpleadoComponent {
+  public titulo_empleados = 'Componente Empleados:';
+
+  public empleado:Empleado;
+  public trabajadores:Array<Empleado>;
+
+  constructor(){
+    this.empleado = new Empleado('David Lopez', 27, 'Electicista', true);
+    this.trabajadores = [
+      new Empleado('Juan Garcia', 27, 'Fontanería', true),
+      new Empleado('Pedro Perez', 42, 'Carpintería', true),
+      new Empleado('Maria Sarmiento', 58, 'Cocina', false),
+      new Empleado('Igarne Pagatzaurtunduagoienengoa', 23, 'Cocina', true)
+    ];
+  }
+
+  ngOnInit(){
+    console.log(this.trabajadores);
+  }
+}
+
+```
+
 
 
 ### PLANTILLAS
@@ -27,8 +65,21 @@ Las plantillas van a definir la vista de los componentes.
 
 Son htmls y tienen sintaxis especial de Angular. Trabajando con el databinding y las directivas.
 
+Ejemplo de plantilla:
+
+``` html
+<h3>{{titulo_empleados}}</h3>
+
+<h4>Empleado mejor valorado:</h4>
+  <ul>
+    <li>{{trabajadores[3].nombre}}</li>
+    <li>{{trabajadores[2].edad}}</li>
+    <li>{{trabajadores[1].cargo}}</li>
+    <li>{{trabajadores[0].contratado}}</li>
+  </ul>
 
 
+```
 ### DECORADORES Y METADATOS
 
 Con los decoradores(patrón de diseño) vamos a configurar dinamicamente atributos/metadatos de las clases y componentes.
@@ -54,4 +105,4 @@ Son funcionalidades aplicables al DOM y a los elementos HTML en las plantillas d
 
 Básicamente son nuevos atributos para aplicarle a cualquier cosa en nuestra plantilla/vista.
 
-Tienes más información sobre la arquitectura de Angular 4 en la [documentación oficial](https://angular.io/docs/ts/latest/guide/architecture.html).
+Hay1 más información sobre la arquitectura de Angular 4 en la [documentación oficial](https://angular.io/docs/ts/latest/guide/architecture.html).

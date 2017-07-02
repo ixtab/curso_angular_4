@@ -1,0 +1,89 @@
+<h3>{{titulo_empleados}}</h3>
+
+<h4>Empleado mejor valorado:</h4>
+  
+<div *ngIf="trabajador_externo == true"> 
+  <ul>
+    <li>{{trabajadores[2].nombre}}</li>
+    <li>{{trabajadores[2].edad}}</li>
+    <li>{{trabajadores[2].cargo}}</li>
+    <li *ngIf="trabajadores[2].contratado == true">Está contratado</li>
+    <li *ngIf="trabajadores[2].contratado == false">Trabajador Externo</li>
+  </ul>
+  <button (click)="cambiarExterno(false)">Mostrar Empleado</button>
+</div>
+
+<div *ngIf="trabajador_externo == false">
+  <ul>
+    <li>{{empleado.nombre}}</li>
+    <li>{{empleado.edad}}</li>
+    <li>{{empleado.cargo}}</li>
+    <li *ngIf="empleado.contratado == true">Está contratado</li>
+    <li *ngIf="empleado.contratado == false">Trabajador Externo</li>
+  </ul>
+  <button (click)="cambiarExterno(true)">Mostrar Trabajador</button>
+ </div>
+
+<hr>
+
+<h3>Listado de Empleados</h3>
+
+<ul>
+  <li *ngFor="let trabajador of trabajadores; let i = index">
+    <strong>Empleado {{i + 1}}:</strong>
+    <ul>
+      <li>{{trabajador.nombre}}</li>
+      <li>{{trabajador.edad}}</li>
+      <li>{{trabajador.cargo}}</li>
+      <li *ngIf="trabajador.contratado == true">Está contratado</li>
+      <li *ngIf="trabajador.contratado == false">Trabajador Externo</li>
+    </ul>
+  </li>
+</ul>
+
+<hr>
+
+<h3>Colores switch</h3>
+
+<ul [ngSwitch]="color" [ngStyle]="{'background-color':'#eee', 'text-align':'right', 'letter-spacing':'4px'}">
+  <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
+                                'color':color,
+                                'margin':'0 190px',
+                                'font-size':'24px', 
+                                'text-shadow':'0 0 20px '+color
+                                
+                                }"
+  >
+    Es de color púrpura
+  </li>
+  <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
+                                'color':'green',
+                                'margin':'0 190px',
+                                'font-size':'24px', 
+                                'text-shadow':'0 0 20px green'
+                                
+                                }"
+  >
+    Es de color verde
+  </li>
+  <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
+                                'color':'pink',
+                                'margin':'0 190px',
+                                'font-size':'24px', 
+                                'text-shadow':'0 0 20px pink'
+                                
+                                }"
+  >
+    Es de color rosa
+  </li>
+  <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
+                                'color':'#00ffcc',
+                                'margin':'0 190px',
+                                'font-size':'24px', 
+                                'text-shadow':'0 0 20px #00ffcc'
+                                
+                                }"
+  >
+    Es de color verde azulado
+  </li>
+</ul> 
