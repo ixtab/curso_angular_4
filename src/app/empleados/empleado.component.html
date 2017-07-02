@@ -45,10 +45,10 @@
 
 <h3>Colores switch</h3>
 
-<ul [ngSwitch]="color" [ngStyle]="{'background-color':'#eee', 'text-align':'right', 'letter-spacing':'4px'}">
+<ul [ngSwitch]="color" [ngStyle]="{'background-color':'#eee', 'text-align':'left', 'letter-spacing':'4px'}">
   <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
                                 'color':color,
-                                'margin':'0 190px',
+                                'margin':'0 35%',
                                 'font-size':'24px', 
                                 'text-shadow':'0 0 20px '+color
                                 
@@ -56,7 +56,7 @@
   >
     Es de color púrpura
   </li>
-  <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
+  <li *ngSwitchCase="'green'" [ngStyle]="{
                                 'color':'green',
                                 'margin':'0 190px',
                                 'font-size':'24px', 
@@ -66,7 +66,7 @@
   >
     Es de color verde
   </li>
-  <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
+  <li *ngSwitchCase="'pink'" [ngStyle]="{
                                 'color':'pink',
                                 'margin':'0 190px',
                                 'font-size':'24px', 
@@ -76,7 +76,7 @@
   >
     Es de color rosa
   </li>
-  <li *ngSwitchCase="'#ff00ff'" [ngStyle]="{
+  <li *ngSwitchCase="'#00ffcc'" [ngStyle]="{
                                 'color':'#00ffcc',
                                 'margin':'0 190px',
                                 'font-size':'24px', 
@@ -87,3 +87,18 @@
     Es de color verde azulado
   </li>
 </ul> 
+
+<hr>
+
+<h3>Selector de colores</h3>
+<input type="text" [(ngModel)]="color_seleccionado" /> <!-- Two way data-binding-->
+<pre><strong>Color seleccionado:</strong> <em>{{color_seleccionado}}</em></pre>
+<div [ngStyle]="{
+   'background':color_seleccionado,
+   'height':'200px',
+   'width':'200px',
+   'border':'1px solid'
+}"></div>
+<br>
+<button (click)="logColorSeleccionado()">Alert con el color</button>
+<hr>
