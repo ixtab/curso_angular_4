@@ -1,24 +1,32 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Es necesario para trabajar con el two way data-binding *
+import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
 import { AppFrutaComponent } from './fruta/app.fruta.component';
 import { EmpleadoComponent} from './empleados/empleado.component';
+import { HomeComponent } from './home/home.component';
+import { ContactoComponent } from './contacto/contacto.component';
  
 @NgModule({
   declarations: [
     AppComponent,
     AppFrutaComponent,
-    EmpleadoComponent
+    EmpleadoComponent,
+    HomeComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule // * Hay que importarlo también aquí
+    FormsModule, // * Hay que importarlo también aquí
+    routing
   ],
-  providers: [],
+  providers: [
+    appRoutingProviders
+  ],
   bootstrap: [
-  AppComponent
+    AppComponent
   ]
 })
 export class AppModule { }
