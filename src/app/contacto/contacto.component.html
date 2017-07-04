@@ -1,5 +1,14 @@
-<h2>{{titulo}}</h2>
+<h2>{{titulo}} - {{parametro}}</h2>
 
 
-<p *ngIf="parametro;else nada" >Parametro de la url: {{parametro}}</p>
-<ng-template #nada><p>No se ha pasado nada</p></ng-template>
+<div *ngIf="parametro" >
+  Parametro de la url: {{parametro}}
+</div>
+
+<div *ngIf="!parametro" >
+  <button (click)="redirigir()">Ir a página con parámetro</button>
+</div>
+<br>
+<div>
+  <button (click)="redirigirDos()">Ir a inicio</button>
+</div>

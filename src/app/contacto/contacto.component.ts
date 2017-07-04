@@ -21,4 +21,12 @@ export class ContactoComponent{
     });
   }
 
+  redirigir(){
+    this._router.navigate(['contacto','jcctek.com'])
+  }
+
+  redirigirDos(){
+    this._router.navigate(['home'])
+  }
+
 }
