@@ -43,3 +43,10 @@ body {
 .upperCase {
   text-transform: uppercase;
 }
+
+.activado {
+  text-shadow: 0 -0px 12px green;
+  color: black !important;
+  text-decoration: none;
+  font-size: 120%;
+}

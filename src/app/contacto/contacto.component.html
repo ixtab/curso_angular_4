@@ -1,1 +1,5 @@
 <h2>{{titulo}}</h2>
+
+
+<p *ngIf="parametro;else nada" >Parametro de la url: {{parametro}}</p>
+<ng-template #nada><p>No se ha pasado nada</p></ng-template>

@@ -13,6 +13,7 @@ const appRoutes: Routes = [
   {path: 'fruta', component: AppFrutaComponent},
   {path: 'pagina-principal', component: HomeComponent},
   {path: 'contacto', component: ContactoComponent},
+  {path: 'contacto/:id', component: ContactoComponent},
   {path: '**', component: HomeComponent}
 
 ];
