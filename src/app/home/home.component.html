@@ -1,4 +1,20 @@
 <h2>{{titulo}}</h2>
+<br>
+
+{{fecha| date:'fullDate' | lowercase}} - 
+
+{{fecha| date:'EEEE, dd/MM/yyyy' | uppercase}} -
+
+{{fecha| date:'HH:mm'}} 
+
+<br>
+
+{{5 | conversor:7 }} <br> 
+
+<h3>Calculadora del exponencial
+  <input type="text" [(ngModel)]="num_exp" />
+</h3>
+<p *ngIf ="num_exp">{{num_exp | conversorexp }}</p>
 
 <hr>
 <input type="text" [(ngModel)]="prenda_a_guardar">

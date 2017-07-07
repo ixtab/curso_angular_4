@@ -8,6 +8,9 @@ import { AppFrutaComponent } from './fruta/app.fruta.component';
 import { EmpleadoComponent} from './empleados/empleado.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
+
+import { ConversorPipe } from './pipes/conversor.pipe';
+import { ConversorExp } from './pipes/conversorexp.pipe';
  
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { ContactoComponent } from './contacto/contacto.component';
     AppFrutaComponent,
     EmpleadoComponent,
     HomeComponent,
-    ContactoComponent
+    ContactoComponent,
+    ConversorPipe,
+    ConversorExp
   ],
   imports: [
     BrowserModule,
