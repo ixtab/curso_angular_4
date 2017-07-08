@@ -10,6 +10,7 @@ import { EmpleadoComponent} from './empleados/empleado.component';
 import { HomeComponent } from './home/home.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { CochesComponent} from './coches/coches.component';
+import { PlantillasComponent } from './plantillas/plantillas.component';
 
 import { ConversorPipe } from './pipes/conversor.pipe';
 import { ConversorExp } from './pipes/conversorexp.pipe';
@@ -22,6 +23,7 @@ import { ConversorExp } from './pipes/conversorexp.pipe';
     HomeComponent,
     ContactoComponent,
     CochesComponent,
+    PlantillasComponent,
     ConversorPipe,
     ConversorExp
   ],
@@ -40,7 +42,7 @@ import { ConversorExp } from './pipes/conversorexp.pipe';
   ]
 })
 export class AppModule {
-  
+
 }
 
 
