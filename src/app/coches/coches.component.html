@@ -42,13 +42,33 @@
   <h4>Listado de Coches</h4>
   <ul>
     <li *ngFor="let coche of coches">
-    <p>
-      Marca: {{coche.marca}} - 
-      Modelo: {{coche.modelo}} - 
-      Cv: {{coche.cv}} - 
-      Año: {{coche.anio}} - 
-      Color: {{coche.color | uppercase}} <span [ngStyle]="{'background':coche.color}">&nbsp;</span>
-    </p>
+      <p>
+        - Marca: {{coche.marca}} 
+        - Modelo: {{coche.modelo}}
+        - Cv: {{coche.cv}} 
+        - Año: {{coche.anio}} 
+        - Color: {{coche.color | uppercase}} 
+        <br>
+        <span [ngStyle]="{'background':coche.color}">&nbsp;</span>
+      </p>
     </li>
   </ul>
+</div>
+
+<div>
+  <hr>
+  <h3>Listado de Artículos</h3>
+  <h5>Ejemplo RestApi</h5>
+  <ul *ngIf="articulos">
+    <li *ngFor="let articulo of articulos">
+      <p>
+        Artículo {{articulo.id}}. <span class="mayo">{{articulo.title}}</span>
+        <br> 
+        <span class="mayo">{{articulo.body}}</span>
+        <br>
+         <em>Usuario {{articulo.userId}}</em>
+      </p>
+    </li>
+  </ul>
+  <span *ngIf="!articulos">Cargando listado...</span>
 </div>

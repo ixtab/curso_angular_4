@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // Es necesario para trabajar con el two way data-binding *
 import { routing, appRoutingProviders } from './app.routing';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppFrutaComponent } from './fruta/app.fruta.component';
@@ -27,7 +28,9 @@ import { ConversorExp } from './pipes/conversorexp.pipe';
   imports: [
     BrowserModule,
     FormsModule, // * Hay que importarlo también aquí
-    routing
+    routing,
+    HttpModule,
+    JsonpModule
   ],
   providers: [
     appRoutingProviders
@@ -36,7 +39,9 @@ import { ConversorExp } from './pipes/conversorexp.pipe';
     AppComponent
   ]
 })
-export class AppModule { }
+export class AppModule {
+  
+}
 
 
 /* 
